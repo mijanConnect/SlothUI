@@ -108,7 +108,7 @@ body {
 .hero {
   width: 100%;
   height: auto;
-  background-image: url(Hero-background.png);
+  background: url(/assets/images/Header/Hero-background.png);
   background-size: cover;
   background-position: center;
 }
