@@ -38,3 +38,29 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+// Load More
+document.addEventListener("DOMContentLoaded", function () {
+  const items = document.querySelectorAll(".item");
+  const loadMoreButton = document.getElementById("loadMore");
+  let visibleCount = 4;
+
+  items.forEach((item, index) => {
+    if (index < visibleCount) {
+      item.classList.add("visible");
+    }
+  });
+
+  loadMoreButton.addEventListener("click", function () {
+    for (let i = visibleCount; i < visibleCount + 4; i++) {
+      if (items[i]) {
+        items[i].classList.add("visible");
+      }
+    }
+    visibleCount += 4;
+
+    if (visibleCount >= items.length) {
+      loadMoreButton.style.display = "none";
+    }
+  });
+});
