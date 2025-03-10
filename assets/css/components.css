@@ -11,6 +11,18 @@
   cursor: pointer;
 }
 
+.button:visited {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #4f46e5;
+  padding: 13px 20px;
+  border-radius: 50px;
+  border: 1px solid #4f46e5;
+  cursor: pointer;
+}
+
 .button:hover {
   background: #ffffff;
   border: 1px solid #cbd5e1;
@@ -71,7 +83,6 @@
 }
 
 .main-paragraph {
-  
   font-size: 18px;
   font-weight: 400;
   line-height: 160%;

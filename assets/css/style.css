@@ -188,6 +188,12 @@ body {
   text-align: center;
 }
 
+@media screen and (max-width: 576px) {
+  .features {
+    padding: 64px 0;
+  }
+}
+
 .features-top {
   display: flex;
   justify-content: center;
@@ -241,6 +247,12 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 96px 0;
+}
+
+@media screen and (max-width: 576px) {
+  .statistics {
+    padding: 64px 0;
+  }
 }
 
 .home-icon {
@@ -307,6 +319,12 @@ body {
 /* Tab Features Section */
 .tab-features {
   padding: 96px 0;
+}
+
+@media screen and (max-width: 576px) {
+  .tab-features {
+    padding: 64px 0;
+  }
 }
 
 .tab-features-paragraph {
@@ -403,6 +421,12 @@ body {
   padding: 94px 0;
 }
 
+@media screen and (max-width: 576px) {
+  .location {
+    padding: 64px 0;
+  }
+}
+
 .location-items {
   display: flex;
   align-items: center;
@@ -466,6 +490,13 @@ body {
   align-items: center;
   flex-direction: column;
 }
+
+@media screen and (max-width: 576px) {
+  .faq {
+    padding: 64px 0;
+  }
+}
+
 .faq-top {
   display: flex;
   align-items: center;
@@ -639,6 +670,12 @@ body {
 .footer {
   padding: 96px 0;
   background: #f8fafc;
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    padding: 64px 0;
+  }
 }
 
 .footer-container {
