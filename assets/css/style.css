@@ -396,12 +396,6 @@ body {
   padding: 96px 0;
 }
 
-@media (max-width: 767px) {
-  .tab-features {
-    padding: 64px 0;
-  }
-}
-
 .tab-features-paragraph {
   padding: 16px 0 64px 0;
   font-size: 20px !important;
@@ -445,6 +439,29 @@ body {
 }
 
 @media (max-width: 1079px) and (min-width: 768px) {
+  .tab-features-container {
+    flex-direction: column;
+    row-gap: 35px;
+  }
+
+  .tab-features-left {
+    width: 100%;
+  }
+
+  .tab-features-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .tab-features {
+    padding: 64px 0;
+  }
+
+  .tab-features-paragraph {
+    padding: 16px 0 40px 0;
+  }
+
   .tab-features-container {
     flex-direction: column;
     row-gap: 35px;
