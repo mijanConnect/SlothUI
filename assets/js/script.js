@@ -76,5 +76,102 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-document.querySelectorAll(".animate-ease").forEach((el) => observer.observe(el));
-document.querySelectorAll(".animate-zoom").forEach((el) => observer.observe(el));
+document
+  .querySelectorAll(".animate-ease")
+  .forEach((el) => observer.observe(el));
+document
+  .querySelectorAll(".animate-zoom")
+  .forEach((el) => observer.observe(el));
+
+//Data Efficiencey & Conversion Rate counter
+function countUp(element, target, duration = 2000) {
+  let start = 0;
+  const increment = Math.ceil(target / (duration / 16)); // Approx. 60fps
+  const update = () => {
+    start += increment;
+    if (start >= target) {
+      element.textContent = target;
+    } else {
+      element.textContent = start;
+      requestAnimationFrame(update);
+    }
+  };
+  update();
+}
+
+function observeCountUpOnScroll(targetId, countTo) {
+  const element = document.getElementById(targetId);
+  if (!element) return;
+
+  let started = false;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !started) {
+          countUp(element, countTo);
+          started = true;
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(element.closest("section"));
+}
+observeCountUpOnScroll("count", 420);
+observeCountUpOnScroll("count2", 720);
+
+// AI LLM Scale counter
+function countUpFormatted(element, target, duration = 2000, suffix = "") {
+  let start = 0;
+  const fps = 60;
+  const steps = duration / (1000 / fps);
+  const increment = target / steps;
+  let currentStep = 0;
+
+  const update = () => {
+    currentStep++;
+    start += increment;
+    if (currentStep >= steps) {
+      element.textContent = formatNumber(target) + suffix;
+    } else {
+      element.textContent = formatNumber(start) + suffix;
+      requestAnimationFrame(update);
+    }
+  };
+
+  update();
+}
+
+function formatNumber(num) {
+  if (num >= 1e6) {
+    return (num / 1e6).toFixed(2) + "M";
+  } else if (num >= 1e3) {
+    return (num / 1e3).toFixed(1) + "K";
+  } else {
+    return Math.floor(num).toString();
+  }
+}
+
+function observeFormattedCounter(targetId, countTo, duration = 2000) {
+  const element = document.getElementById(targetId);
+  if (!element) return;
+
+  let started = false;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !started) {
+          countUpFormatted(element, countTo, duration);
+          started = true;
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(element.closest("section"));
+}
+observeFormattedCounter("count3", 1820000);
