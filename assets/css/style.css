@@ -616,25 +616,18 @@ body {
   padding: 94px 0;
 }
 
-@media (max-width: 767px) {
-  .location {
-    padding: 64px 0;
-  }
-}
-
 .location-items {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .location-item {
-  padding: 25px;
+  padding: 24px;
+  box-sizing: border-box;
+  width: 100%;
   border: 1px solid #e2e8f0;
   border-radius: 25px;
-  width: 19%;
 }
 
 .location-country {
@@ -653,27 +646,26 @@ body {
   letter-spacing: 0%;
   color: #1e293b;
   margin: 0;
+  /* white-space: nowrap; */
 }
 
-@media (max-width: 1079px) and (min-width: 768px) {
-  .location-items {
-    flex-wrap: wrap;
-    gap: 20px;
+@media (min-width: 768px) and (max-width: 1079px) {
+  .location-item {
+    width: calc(50% - 16px);
   }
 
-  .location-item {
-    width: 40%;
+  .location-items {
+    gap: 32px;
   }
 }
 
-@media screen and (max-width: 665px) {
-  .location-items {
-    flex-wrap: wrap;
-    gap: 10px;
+@media (min-width: 1080px) {
+  .location-item {
+    width: calc(25% - 24px);
   }
 
-  .location-item {
-    width: 90%;
+  .location-items {
+    gap: 32px;
   }
 }
 
