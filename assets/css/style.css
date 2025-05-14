@@ -221,9 +221,39 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  row-gap: 32px;
-  column-gap: 75px;
-  flex-flow: row wrap;
+  column-gap: 68px;
+}
+
+.logo-slider {
+  overflow: hidden;
+}
+
+.logo-track {
+  animation: scroll 5s linear infinite;
+}
+
+.logo-track img {
+  object-fit: contain;
+}
+
+.logo-slider:hover .logo-track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 767px) {
+  .logo-track img {
+    object-fit: contain;
+    height: 40px;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ============= Features Section ============= */
@@ -1037,9 +1067,8 @@ body {
   }
 
   .bottom-to-top-btn {
-  margin-top: 32px;
-}
-
+    margin-top: 32px;
+  }
 }
 
 /* ============= Animation css ============= */
