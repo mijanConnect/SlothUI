@@ -538,7 +538,7 @@ body {
 
 .testimonials-item {
   border: 1px solid #e2e8f0;
-  width: 33%;
+  width: 31%;
   border-radius: 24px;
   box-sizing: border-box;
 }
@@ -1008,7 +1008,7 @@ body {
   transition: 0.3s;
 }
 
-.compyright {
+.compyright-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1016,16 +1016,30 @@ body {
   margin-top: 32px;
 }
 
-@media (max-width: 1079px) and (min-width: 768px) {
-  .compyright {
-    flex-direction: column;
-    flex-wrap: wrap;
+.bottom-to-top-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -45px;
+}
+
+@media (max-width: 767px) {
+  .compyright-top {
     justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 32px;
   }
 
-  .compyright :nth-child(2) {
-    order: 3;
+  .compyright-top p {
+    margin: 0;
+    padding: 16px 0 0 0;
   }
+
+  .bottom-to-top-btn {
+  margin-top: 32px;
+}
+
 }
 
 /* ============= Animation css ============= */
