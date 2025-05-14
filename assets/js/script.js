@@ -66,3 +66,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Css animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".animate-ease").forEach((el) => observer.observe(el));
+document.querySelectorAll(".animate-zoom").forEach((el) => observer.observe(el));
