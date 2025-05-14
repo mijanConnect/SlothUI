@@ -616,6 +616,12 @@ body {
   padding: 94px 0;
 }
 
+@media (max-width: 767px) {
+  .location {
+    padding: 64px 0;
+  }
+}
+
 .location-items {
   display: flex;
   flex-wrap: wrap;
@@ -678,17 +684,24 @@ body {
   flex-direction: column;
 }
 
-@media (max-width: 767px) {
-  .faq {
-    padding: 64px 0;
-  }
-}
-
 .faq-top {
   display: flex;
   align-items: center;
   flex-direction: column;
   text-align: center;
+}
+
+.faq-paragraph {
+  padding: 24px 0 48px 0 !important;
+}
+
+@media (max-width: 767px) {
+  .faq {
+    padding: 64px 0;
+  }
+  .faq-paragraph {
+    padding: 20px 0 40px 0 !important;
+  }
 }
 
 .faq-accodion {
