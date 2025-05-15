@@ -26,20 +26,26 @@ function openFeatures(evt, FeaturesName) {
 }
 
 // Accodion
-var acc = document.getElementsByClassName("accordion");
-var i;
+const accordions = document.querySelectorAll(".accordion");
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
+accordions.forEach((accordion) => {
+  accordion.addEventListener("click", function () {
+    const panel = this.nextElementSibling;
+    const isActive = this.classList.contains("active");
+
+    // Close all
+    accordions.forEach((acc) => {
+      acc.classList.remove("active");
+      acc.nextElementSibling.classList.remove("open");
+    });
+
+    // Toggle current only if it was not active
+    if (!isActive) {
+      this.classList.add("active");
+      panel.classList.add("open");
     }
   });
-}
+});
 
 // Load More
 document.addEventListener("DOMContentLoaded", function () {
