@@ -610,6 +610,15 @@ body {
   box-sizing: border-box;
 }
 
+.testimonials-stars{
+  color: #F59E0B;
+  font-size: 20px;
+}
+
+.testimonials-stars i{
+  margin-right: 3px;
+}
+
 .testimonials-text {
   font-weight: 400;
   font-size: 18px;
