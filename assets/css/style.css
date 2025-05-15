@@ -115,7 +115,6 @@ body {
   }
 
   .navbar-buttons {
-    /* display: none; */
     flex-direction: column;
     width: 100%;
     position: absolute;
@@ -130,13 +129,13 @@ body {
     height: 100vh;
   }
 
-  .button {
+  .nav-btn {
     color: #ffffff !important;
     background: #4f46e5 !important;
     margin: 0 20px !important;
   }
 
-  .button-2 {
+  .nav-btn-2 {
     color: #ffffff !important;
     background: #4f46e5 !important;
     margin: 0 20px 5px 20px !important;
@@ -146,7 +145,7 @@ body {
     z-index: 2;
     display: flex;
     margin-top: 33px;
-    max-height: 500px; /* Adjust as needed */
+    max-height: 500px;
     opacity: 1;
     visibility: visible;
   }
@@ -155,17 +154,10 @@ body {
     z-index: 1;
     display: flex;
     margin-top: 33px;
-    max-height: 200px; /* Adjust as needed */
+    max-height: 200px;
     opacity: 1;
     visibility: visible;
   }
-
-  /* .nav-active {
-    display: flex;
-    margin-top: 33px;
-    height: 100vh;
-    z-index: 1;
-  } */
 }
 
 /* ============= Hero Section ============= */
@@ -632,8 +624,6 @@ body {
   max-height: 1005px;
   flex-wrap: wrap;
   flex-direction: column;
-  /* align-items: center;
-  justify-content: flex-start; */
 }
 
 .testimonials-item {
@@ -706,7 +696,6 @@ body {
     padding: 20px 0 32px 0 !important;
   }
 
-  /* Here */
   .testimonials-items {
     row-gap: 16px;
     flex-wrap: nowrap;
@@ -921,7 +910,7 @@ body {
 }
 
 .panel.open {
-  max-height: 500px; /* adjust as needed */
+  max-height: 500px;
 }
 
 .accordion-content-right img {
@@ -942,8 +931,11 @@ body {
 }
 
 /* ============= CTA Section ============= */
-.cta {
+.cta-main {
   background-color: #eef2ff;
+}
+
+.cta {
   position: relative;
   height: 650px;
 }
@@ -976,7 +968,7 @@ body {
 .buttons {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .cta-right {
@@ -999,6 +991,24 @@ body {
 
 .img2-mobile {
   display: none;
+}
+
+.cta-btn-2 {
+  color: #4f46e5 !important;
+  border: 1px solid #4f46e5 !important;
+}
+
+.cta-btn-2:hover {
+  color: white !important;
+  border: 1px solid #4f46e5 !important;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  color: #4f46e5 !important;
+  border: 1px solid #4f46e5 !important;
+  transition: 0.3s ease;
+  background-color: #eef2ff !important;
 }
 
 @media (max-width: 1079px) and (min-width: 768px) {
@@ -1024,8 +1034,8 @@ body {
 
   .img1-mobile {
     display: block;
-    right: 0;
-    bottom: 0;
+    right: 20%;
+    bottom: 15%;
   }
 
   .img2-mobile {
@@ -1039,6 +1049,52 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .cta {
+    height: 980px;
+  }
+
+  .cta-left-text {
+    top: 75px;
+  }
+
+  .cta-left-paragraph {
+    max-width: 100%;
+  }
+
+  .img1 {
+    display: none;
+  }
+
+  .img2 {
+    display: none;
+  }
+
+  .img1-mobile {
+    display: block;
+    right: 0;
+    bottom: 4%;
+  }
+
+  .img2-mobile {
+    display: block;
+    right: 50%;
+    bottom: -10%;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
     width: 100%;
   }
 
@@ -1109,6 +1165,7 @@ body {
 
 .footer-link-line ul {
   list-style: none;
+  padding: 0;
 }
 
 .footer-link-line ul li {
